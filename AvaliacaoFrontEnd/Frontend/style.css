@@ -1,16 +1,186 @@
-﻿body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+﻿/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-form {
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #b30000; /* Fundo vermelho */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+nav {
+    background-color: #b30000;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav img {
+        height: 50px;
+    }
+
+    nav button {
+        background-color: white;
+        color: #b30000;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+        nav button:hover {
+            background-color: #f0f0f0;
+        }
+
+/* Login Section */
+#loginSection {
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 80px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+    #loginSection img {
+        width: 120px;
+        margin-bottom: 20px;
+    }
+
+    #loginSection h2 {
+        color: #b30000;
+        margin-bottom: 20px;
+    }
+
+    #loginSection input {
+        width: calc(100% - 20px);
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    #loginSection button {
+        background-color: #b30000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+        #loginSection button:hover {
+            background-color: #800000;
+        }
+
+/* Container principal */
+main {
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Produtos Section */
+#produtosSection h1 {
+    color: #b30000;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-input {
-    margin-right: 10px;
+/* Formulários */
+form {
+    background-color: #fff;
+    border: 2px solid #b30000;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-button {
-    margin-left: 10px;
+    form input {
+        padding: 10px;
+        margin: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: calc(50% - 22px);
+    }
+
+    form button {
+        padding: 10px 15px;
+        background-color: #b30000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        form button:hover {
+            background-color: #800000;
+        }
+
+/* Lista de produtos */
+#listaProdutos {
+    list-style: none;
+    padding: 0;
+}
+
+    #listaProdutos li {
+        background-color: #f9f9f9;
+        margin: 10px 0;
+        padding: 12px 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #listaProdutos span {
+        flex: 1;
+        text-align: left;
+    }
+
+    #listaProdutos button {
+        margin-left: 5px;
+        background-color: #b30000;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        #listaProdutos button:hover {
+            background-color: #800000;
+        }
+
+/* Responsivo */
+@media (max-width: 600px) {
+    form input {
+        width: calc(100% - 20px);
+    }
+
+    #listaProdutos li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #listaProdutos button {
+        margin-top: 5px;
+    }
 }

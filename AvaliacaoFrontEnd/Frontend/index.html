@@ -2,28 +2,42 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <title>Produtos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Cempro - Gerenciador de Produtos</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="loginSection">
-        <h2>Login</h2>
-        <input type="text" id="usuario" placeholder="Usuário" />
-        <input type="password" id="senha" placeholder="Senha" />
-        <button onclick="fazerLogin()">Entrar</button>
-        <p id="loginErro" style="color: red;"></p>
-    </div>
 
-    <div id="produtosSection" style="display: none;">
-        <h1>Gerenciador de Produtos</h1>
-        <form id="formProduto">
-            <input type="hidden" id="produtoId" />
-            <input type="text" id="nome" placeholder="Nome do Produto" required />
-            <input type="number" id="valor" placeholder="Valor" step="0.01" required />
-            <button type="submit">Salvar</button>
-        </form>
-        <ul id="listaProdutos"></ul>
-    </div>
+    <nav>
+        <img src="images/logo.png" alt="Logo Data Cempro">
+        <button onclick="fazerLogout()" id="logoutButton" style="display:none;">Logout</button>
+    </nav>
+
+    <main>
+
+        <div id="loginSection">
+            <img src="images/logo.png" alt="Logo Data Cempro">
+            <h2>Login</h2>
+            <input type="text" id="usuario" placeholder="Usuário" />
+            <input type="password" id="senha" placeholder="Senha" />
+            <br />
+            <button onclick="fazerLogin()">Entrar</button>
+            <p id="loginErro" style="color: red;"></p>
+        </div>
+
+        <div id="produtosSection" style="display: none;">
+            <h1>Gerenciador de Produtos</h1>
+            <form id="formProduto">
+                <input type="hidden" id="produtoId" />
+                <input type="text" id="nome" placeholder="Nome do Produto" required />
+                <input type="number" id="valor" placeholder="Valor" step="0.01" required />
+                <br />
+                <button type="submit">Salvar</button>
+            </form>
+            <ul id="listaProdutos"></ul>
+        </div>
+
+    </main>
 
     <script src="script.js"></script>
 </body>

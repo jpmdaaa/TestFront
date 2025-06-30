@@ -7,8 +7,12 @@ const produtosSection = document.getElementById('produtosSection');
 if (token) {
     loginSection.style.display = 'none';
     produtosSection.style.display = 'block';
+    document.getElementById('logoutButton').style.display = 'inline-block';
     carregarProdutos();
+} else {
+    exibirLogout(false);
 }
+
 
 async function fazerLogin() {
     const usuario = document.getElementById('usuario').value;
@@ -27,9 +31,13 @@ async function fazerLogin() {
         loginSection.style.display = 'none';
         produtosSection.style.display = 'block';
         carregarProdutos();
+        exibirLogout(true);
+
     } else {
         loginErro.innerText = 'Usuário ou senha inválidos.';
     }
+
+    cument.getElementById('logoutButton').style.display = 'inline-block';
 }
 
 const lista = document.getElementById('listaProdutos');
@@ -96,6 +104,17 @@ function editarProduto(produtoId, nomeProduto, valorProduto) {
     id.value = produtoId;
     nome.value = nomeProduto;
     valor.value = valorProduto;
+}
+
+function fazerLogout() {
+    localStorage.removeItem('token');
+    exibirLogout(false);
+    location.reload();
+}
+
+function exibirLogout(exibir) {
+    const btn = document.getElementById('logoutButton');
+    btn.style.display = exibir ? 'inline-block' : 'none';
 }
 
 async function excluirProduto(produtoId) {
